@@ -1,39 +1,115 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, lib, config, pkgs, ... }: {
-  # You can import other NixOS modules here
-  imports = [
-    # If you want to use modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+{ config, pkgs, ... }:
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
-  ];
-
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
+{
+  imports =
+    [ <nixos-hardware/common/pc>
+      <nixos-hardware/common/pc/ssd>
+      <nixos-hardware/common/cpu/intel/cpu-only.nix>
+      <nixos-hardware/common/gpu/nvidia>
+      ./hardware-configuration.nix
+      ./user.nix
+      ./btrbk.nix
     ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
+
+    nixpkgs = {
+      # You can add overlays here
+      overlays = [
+        # If you want to use overlays exported from other flakes:
+        # neovim-nightly-overlay.overlays.default
+
+        # Or define it inline, for example:
+        # (final: prev: {
+        #   hi = final.hello.overrideAttrs (oldAttrs: {
+        #     patches = [ ./change-hello-to-hi.patch ];
+        #   });
+        # })
+      ];
+      config = {
+        allowUnfree = true;
+      };
+    };
+  
+  
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    tmpOnTmpfs = true;
+    tmpOnTmpfsSize = "8%";
+
+    supportedFilesystems = [ "ntfs" ];
+  };
+  networking.hostName = "nix-pc"; # Define your hostname.
+  # Pick only one of the below networking options.
+  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  time.timeZone = "Europe/Warsaw";
+
+
+
+  i18n.defaultLocale = "pl_PL.UTF-8";
+  console = {
+    keyMap = "pl";
+  };
+
+ 
+
+  services.fwupd.enable = true;
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.autoNumlock = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.layout = "pl";
+
+  hardware.opengl.enable = true;
+
+  services.unclutter.enable = true;
+
+
+  # Enable CUPS to print documents.
+  # services.printing.enable = true;
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+
+  programs.partition-manager.enable = true;
+  programs.adb.enable = true;
+
+  programs.htop.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    ohMyZsh = {
+      enable = true;
+      customPkgs = [ pkgs.lambda-mod-zsh-theme ];
+      plugins = [ "git" "colored-man-pages" ];
+      theme = "lambda-mod";
     };
   };
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+
+ 
+  environment.systemPackages = with pkgs; [ compsize vdpauinfo pciutils glxinfo vulkan-tools libva-utils ];
+
 
   nix = {
     # This will add each flake input as a registry
@@ -52,41 +128,37 @@
     };
   };
 
-  # FIXME: Add the rest of your current configuration
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
-  # TODO: Set your hostname
-  networking.hostName = "your-hostname";
+  # List services that you want to enable:
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
-  users.users = {
-    # FIXME: Replace with your username
-    your-username = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
-      initialPassword = "correcthorsebatterystaple";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" ];
-    };
-  };
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
-  services.openssh = {
-    enable = true;
-    # Forbid root login through SSH.
-    permitRootLogin = "no";
-    # Use keys only. Remove if you want to SSH using password (not recommended)
-    passwordAuthentication = false;
-  };
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  # system.copySystemConfiguration = true;
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "22.11";
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "22.11"; # Did you read the comment?
+
 }
+
