@@ -5,11 +5,7 @@
 { inputs, lib, config, pkgs, ... }:
 
 {
-  imports =
-    [ <nixos-hardware/common/pc>
-      <nixos-hardware/common/pc/ssd>
-      <nixos-hardware/common/cpu/intel/cpu-only.nix>
-      <nixos-hardware/common/gpu/nvidia>
+  imports = [
       ./hardware-configuration.nix
       ./user.nix
       ./btrbk.nix
