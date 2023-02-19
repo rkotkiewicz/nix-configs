@@ -1,8 +1,6 @@
 { pkgs, ... }: 
 
-{ 
-  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
-
+{
   users.users.radek = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -11,7 +9,6 @@
       chromium
       ark
       neovim
-      firefox
       smplayer
       mplayer
       yakuake
