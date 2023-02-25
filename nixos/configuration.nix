@@ -31,7 +31,7 @@
   
   
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+#    kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
       systemd-boot.enable = true;
@@ -77,6 +77,8 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -104,7 +106,14 @@
   environment.shells = with pkgs; [ zsh ];
 
  
-  environment.systemPackages = with pkgs; [ compsize vdpauinfo pciutils glxinfo vulkan-tools libva-utils ];
+  environment.systemPackages = with pkgs; [ compsize vdpauinfo pciutils glxinfo mtr ]; # vulkan-tools libva-utils ];
+
+  services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
+  services.xserver.displayManager.setupCommands = ''
+    CENTER='DP-0'
+    RIGHT='HDMI-0'
+    ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --output $RIGHT --rotate right --right-of $CENTER
+  '';
 
 
   nix = {

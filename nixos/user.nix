@@ -24,6 +24,7 @@
   };
 
   programs.kdeconnect.enable = true;
+#  programs.firefox.enablePlasmaBrowserIntegration = true;
 
   programs.steam = {
     enable = true;
