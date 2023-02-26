@@ -8,7 +8,12 @@
   imports = [
       ./hardware-configuration.nix
       ./user.nix
+      ./file-systems.nix
       ./btrbk.nix
+      ./locale.nix
+      ./sound.nix
+      ./shell.nix
+      ./display-server.nix
     ];
 
     nixpkgs = {
@@ -44,27 +49,10 @@
     supportedFilesystems = [ "ntfs" ];
   };
   networking.hostName = "nix-pc"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  time.timeZone = "Europe/Warsaw";
-
-
-
-  i18n.defaultLocale = "pl_PL.UTF-8";
-  console = {
-    keyMap = "pl";
-  };
-
- 
 
   services.fwupd.enable = true;
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.autoNumlock = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.layout = "pl";
 
   hardware.opengl.enable = true;
 
@@ -74,17 +62,8 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
 
   programs.partition-manager.enable = true;
@@ -92,28 +71,18 @@
 
   programs.htop.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    ohMyZsh = {
-      enable = true;
-      customPkgs = [ pkgs.lambda-mod-zsh-theme ];
-      plugins = [ "git" "colored-man-pages" ];
-      theme = "lambda-mod";
-    };
-  };
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+
 
  
-  environment.systemPackages = with pkgs; [ compsize vdpauinfo pciutils glxinfo mtr ]; # vulkan-tools libva-utils ];
+  environment.systemPackages = with pkgs; [
+    compsize
+    vdpauinfo
+    pciutils
+    glxinfo
+    mtr
+    lm_sensors
+  ]; # vulkan-tools libva-utils ];
 
-  services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
-  services.xserver.displayManager.setupCommands = ''
-    CENTER='DP-0'
-    RIGHT='HDMI-0'
-    ${pkgs.xorg.xrandr}/bin/xrandr --output $CENTER --primary --output $RIGHT --rotate right --right-of $CENTER
-  '';
 
 
   nix = {

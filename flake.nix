@@ -1,7 +1,6 @@
 {
   description = "My NixOS configuration";
 
-
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -15,7 +14,7 @@
     hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = {nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
