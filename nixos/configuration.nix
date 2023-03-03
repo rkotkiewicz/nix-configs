@@ -14,6 +14,7 @@
       ./sound.nix
       ./shell.nix
       ./display-server.nix
+      ./sshd.nix
     ];
 
     nixpkgs = {
@@ -33,7 +34,7 @@
         allowUnfree = true;
       };
     };
-  
+
   
   boot = {
 #    kernelPackages = pkgs.linuxPackages_latest;
