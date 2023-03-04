@@ -48,6 +48,8 @@
     tmpOnTmpfsSize = "8%";
 
     supportedFilesystems = [ "ntfs" ];
+
+    kernelModules = [ "coretemp" "nct6775" ];
   };
   networking.hostName = "nix-pc"; # Define your hostname.
 
