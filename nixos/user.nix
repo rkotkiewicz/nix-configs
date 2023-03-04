@@ -3,7 +3,7 @@
 {
   users.users.radek = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [
       git
       chromium

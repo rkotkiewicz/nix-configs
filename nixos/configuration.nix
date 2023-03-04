@@ -58,7 +58,7 @@
   hardware.opengl.enable = true;
 
   services.unclutter.enable = true;
-
+  virtualisation.docker.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
