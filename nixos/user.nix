@@ -4,23 +4,6 @@
   users.users.radek = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ];
-    packages = with pkgs; [
-      git
-      chromium
-      ark
-      neovim
-      smplayer
-      mplayer
-      yakuake
-      zoom-us
-      libreoffice-still
-      lutris
-      kate
-      lutris
-      neofetch
-      ncdu
-      jetbrains.idea-community
-    ];
   };
 
   programs.kdeconnect.enable = true;

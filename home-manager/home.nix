@@ -20,7 +20,23 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+   home.packages = with pkgs; [
+     vial
+     chromium
+     ark
+     neovim
+     smplayer
+     mplayer
+     yakuake
+     zoom-us
+     libreoffice-still
+     lutris
+     kate
+     lutris
+     neofetch
+     ncdu
+     jetbrains.idea-community
+   ];
 
   programs.git.enable = true;
 
