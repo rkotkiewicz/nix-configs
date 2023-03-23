@@ -76,6 +76,7 @@
 
 
 
+  hardware.bluetooth.enable = true;
  
   environment.systemPackages = with pkgs; [
     compsize
