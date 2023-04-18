@@ -44,9 +44,6 @@
       efi.canTouchEfiVariables = true;
     };
 
-    tmpOnTmpfs = true;
-    tmpOnTmpfsSize = "8%";
-
     supportedFilesystems = [ "ntfs" ];
 
     kernelModules = [ "coretemp" "nct6775" ];
