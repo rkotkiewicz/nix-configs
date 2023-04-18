@@ -31,13 +31,14 @@
      mplayer
      yakuake
      zoom-us
-     libreoffice-still
+     libreoffice-qt
      lutris
      kate
      lutris
      neofetch
      ncdu
      jetbrains.idea-community
+     krusader
    ];
 
   programs.git.enable = true;
