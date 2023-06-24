@@ -9,7 +9,7 @@
       ./hardware-configuration.nix
       ./user.nix
       ./file-systems.nix
-      ./btrbk.nix
+#      ./btrbk.nix
       ./locale.nix
       ./sound.nix
       ./shell.nix
