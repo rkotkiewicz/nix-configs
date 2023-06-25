@@ -84,7 +84,8 @@
     lm_sensors
     ffmpeg_5
     vulkan-tools
-    libva-utils ];
+    libva-utils
+    cpupower ];
 
 
 
