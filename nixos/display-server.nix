@@ -4,6 +4,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.autoNumlock = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmawayland";
   services.xserver.layout = "pl";
 
   services.xserver.videoDrivers = lib.mkDefault [ "amdgpu" ];
