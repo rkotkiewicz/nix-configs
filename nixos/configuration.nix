@@ -37,7 +37,7 @@
 
   
   boot = {
-#    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
       systemd-boot.enable = true;
@@ -46,7 +46,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "coretemp" "nct6775" ];
+    kernelModules = [ "coretemp" "nct6775" "amd_pstate_epp" ];
   };
   networking.hostName = "nix-pc"; # Define your hostname.
 
@@ -83,7 +83,8 @@
     mtr
     lm_sensors
     ffmpeg_5
-  ]; # vulkan-tools libva-utils ];
+    vulkan-tools
+    libva-utils ];
 
 
 
