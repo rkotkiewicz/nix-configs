@@ -39,6 +39,7 @@
      ncdu
      jetbrains.idea-community
      krusader
+     powerdevil
    ];
 
   programs.git.enable = true;
