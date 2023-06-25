@@ -46,7 +46,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "coretemp" "nct6775" "amd_pstate_epp" ];
+    kernelModules = [ "coretemp" "nct6775" "amd_pstate_epp" "amd_pstate" ];
   };
   networking.hostName = "nix-pc"; # Define your hostname.
 
