@@ -37,7 +37,16 @@
 
   
   boot = {
-#    kernelPackages = pkgs.linuxPackages_6_3;
+    kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_3.override {
+     argsOverride = rec {
+       src = pkgs.fetchurl {
+             url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.3.9.tar.xz";
+             sha256 = "41ecf21399b17ab85163750ba22347d09b54fa099b80b63d0e2ef0066129b13e";
+       };
+       version = "6.3.9";
+       modDirVersion = "6.3.9";
+       };
+   });
 
     loader = {
       systemd-boot.enable = true;
