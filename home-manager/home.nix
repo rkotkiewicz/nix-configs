@@ -40,6 +40,7 @@
      jetbrains.idea-community
      krusader
      powerdevil
+     wget
    ];
 
   programs.git.enable = true;
