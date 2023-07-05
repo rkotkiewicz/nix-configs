@@ -41,6 +41,7 @@
      krusader
      powerdevil
      wget
+     libva-utils
    ];
 
   programs.git.enable = true;
