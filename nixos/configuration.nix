@@ -60,6 +60,7 @@
 
 
   hardware.opengl.enable = true;
+  hardware.firmware = [ pkgs.alsa-firmware ];
 
   services.unclutter.enable = true;
   virtualisation.docker.enable = true;
@@ -90,7 +91,7 @@
     ffmpeg_5
     vulkan-tools
     libva-utils
-    alsa-firmware ];
+    alsa-firmware];
 
 
 
