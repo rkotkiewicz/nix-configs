@@ -71,6 +71,8 @@
 
   security.rtkit.enable = true;
 
+  programs.corectrl.enable = true;
+
 
   programs.partition-manager.enable = true;
   programs.adb.enable = true;
