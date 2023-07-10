@@ -64,7 +64,6 @@
 
   services.unclutter.enable = true;
   virtualisation.docker.enable = true;
-  virtualisation.docker.enableNvidia = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
