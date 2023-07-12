@@ -4,6 +4,17 @@
 
 { inputs, lib, config, pkgs, ... }:
 
+let
+  linux-firmware = pkgs.linux-firmware.overrideAttrs (prev: {
+    version = "20230404-git";
+
+    src = pkgs.fetchzip {
+        url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20230404.tar.gz";
+        hash = "sha256-HZ2uU8BQKTkDup19mzhf67u48aFVyQfGQSVlCqFPWsk=";
+    };
+    outputHash = "sha256-CHD/MRut/0yjPuG+hH2gsbTR/Dhk4DbWfHsCbsg1oX8=";
+});
+in
 {
   imports = [
       ./hardware-configuration.nix
@@ -60,7 +71,10 @@
 
 
   hardware.opengl.enable = true;
-  hardware.firmware = [ pkgs.alsa-firmware ];
+
+
+  hardware.firmware = [ pkgs.alsa-firmware linux-firmware ];
+  hardware.cpu.amd.updateMicrocode = true;
 
   services.unclutter.enable = true;
   virtualisation.docker.enable = true;
