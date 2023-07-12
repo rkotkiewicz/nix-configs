@@ -62,6 +62,7 @@ in
     kernelParams = [
       "video=DP-1:3440x1440@144"
       "video=HDMI-A-1:1920x1200@60,rotate=180"
+      "force_id=0xd420"
     ];
   };
   networking.hostName = "nix-pc"; # Define your hostname.
@@ -85,7 +86,8 @@ in
   security.rtkit.enable = true;
 
   programs.corectrl.enable = true;
-
+  programs.corectrl.gpuOverclock.ppfeaturemask = "0xffffffff";
+  programs.corectrl.gpuOverclock.enable = true;
 
   programs.partition-manager.enable = true;
   programs.adb.enable = true;
