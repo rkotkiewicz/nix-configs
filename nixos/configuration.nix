@@ -46,7 +46,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "coretemp" "nct6775" "amd_pstate_epp" "amd_pstate" ];
+    kernelModules = [ ];
 
     kernelParams = [
       "video=DP-1:3440x1440@144"
