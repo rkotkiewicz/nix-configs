@@ -46,7 +46,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ ];
+    kernelModules = [ "nct6775" ];
 
     kernelParams = [
       "video=DP-1:3440x1440@144"
