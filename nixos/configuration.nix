@@ -78,7 +78,7 @@
 
   programs.htop.enable = true;
 
-
+  services.acpid.enable = treu;
 
   hardware.bluetooth.enable = true;
  
