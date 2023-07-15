@@ -57,7 +57,7 @@ in
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "nct6775" ];
+    kernelModules = [ "nct6775" "snd_hda_codec_ca0132" ];
 
     kernelParams = [
       "video=DP-1:3440x1440@144"
