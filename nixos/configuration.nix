@@ -108,7 +108,8 @@ in
     ffmpeg_5
     vulkan-tools
     libva-utils
-    alsa-firmware];
+    alsa-firmware
+    inxi];
 
 
 
