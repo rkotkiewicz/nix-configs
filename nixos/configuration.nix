@@ -97,6 +97,8 @@ in
   services.acpid.enable = true;
 
   hardware.bluetooth.enable = true;
+
+  programs.gamescope.enable = true;
  
   environment.systemPackages = with pkgs; [
     compsize
