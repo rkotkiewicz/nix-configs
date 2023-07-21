@@ -57,7 +57,7 @@ in
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "nct6775" "snd_hda_codec_ca0132" ];
+    kernelModules = [ "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
 
     kernelParams = [
       "video=DP-1:3440x1440@144"
@@ -108,7 +108,6 @@ in
     ffmpeg_5
     vulkan-tools
     libva-utils
-    alsa-firmware
     inxi];
 
 
