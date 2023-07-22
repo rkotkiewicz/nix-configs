@@ -42,6 +42,7 @@
      powerdevil
      wget
      libva-utils
+     upscayl
    ];
 
   programs.git.enable = true;
