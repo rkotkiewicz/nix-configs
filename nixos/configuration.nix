@@ -64,6 +64,10 @@ in
       "video=HDMI-A-1:1920x1200@60,rotate=180"
       "modules_nct6775_args=force_id=0xd420"
     ];
+
+    extraModprobeConfig = ''
+      options nct6775 force_id=0xd420
+    '';
   };
   networking.hostName = "nix-pc"; # Define your hostname.
 
