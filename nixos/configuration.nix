@@ -68,7 +68,7 @@ in
 
     extraModprobeConfig = ''
       options nct6775 force_id=0xd420
-      options snd_hda_intel power_save=0
+      options snd_hda_intel power_save=0 power_save_controller=0
     '';
   };
   networking.hostName = "nix-pc"; # Define your hostname.
@@ -116,7 +116,8 @@ in
     ffmpeg_5
     vulkan-tools
     libva-utils
-    inxi];
+    inxi
+    exfat];
 
 
 
