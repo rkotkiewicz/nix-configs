@@ -43,6 +43,7 @@
      wget
      libva-utils
      upscayl
+     heroic
    ];
 
   programs.git.enable = true;
