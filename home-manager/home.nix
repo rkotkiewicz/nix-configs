@@ -44,6 +44,7 @@
      libva-utils
      upscayl
      heroic
+     phoronix-test-suite
    ];
 
   programs.git.enable = true;
