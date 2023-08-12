@@ -49,8 +49,8 @@
     kernelModules = [ "andgpu" "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
 
     kernelParams = [
-      "video=DP-1:3440x1440@144"
-      "video=HDMI-A-1:1920x1200@60,rotate=180"
+      "video=card0-DP-2:3440x1440@144"
+      "video=card0-HDMI-A-2:1920x1200@60,rotate=180"
       "modules_nct6775_args=force_id=0xd420"
       "mem_sleep_default=s2idle"
     ];
