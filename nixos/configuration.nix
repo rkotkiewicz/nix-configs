@@ -46,7 +46,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
+    kernelModules = [ "andgpu" "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
 
     kernelParams = [
       "video=DP-1:3440x1440@144"
@@ -109,6 +109,14 @@
     inxi
     exfat];
 
+  hardware.opengl.extraPackages = [
+    pkgs.amdvlk
+  ];
+
+  # To enable Vulkan support for 32-bit applications, also add:
+  hardware.opengl.extraPackages32 = [
+    pkgs.driversi686Linux.amdvlk
+  ];
 
 
   nix = {
