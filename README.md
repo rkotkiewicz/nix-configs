@@ -1,4 +1,13 @@
 # nix-configs
 My nixos, home-manager and nix flakes configurations.
 
-The configurations template I used: https://github.com/Misterio77/nix-starter-configs.
+nix flake update --commit-lock-file
+
+sudo nixos-rebuild switch --flake .#
+
+
+https://nixos.wiki/wiki/Overview_of_the_NixOS_Linux_distribution
+
+nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+sudo nix-collect-garbage --delete-older-than 30d  
