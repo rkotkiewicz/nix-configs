@@ -45,6 +45,7 @@
      upscayl
      heroic
      phoronix-test-suite
+     protonup-qt
    ];
 
   programs.git.enable = true;
