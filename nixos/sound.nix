@@ -9,6 +9,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+    jack.enable = true;
   };
 
   environment.etc."wireplumber/main.lua.d/90-suspend-timeout.lua" = {
