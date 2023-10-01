@@ -107,7 +107,8 @@
     vulkan-tools
     libva-utils
     inxi
-    exfat];
+    exfat
+    xxd];
 
   hardware.opengl.extraPackages = [
     pkgs.amdvlk
