@@ -47,6 +47,7 @@
      phoronix-test-suite
      protonup-qt
      bottles
+     python3
    ];
 
   programs.git.enable = true;
