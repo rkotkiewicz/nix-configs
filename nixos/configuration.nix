@@ -15,6 +15,7 @@
       ./shell.nix
       ./display-server.nix
       ./sshd.nix
+#      ./ups.nix
     ];
 
     nixpkgs = {
@@ -108,7 +109,8 @@
     libva-utils
     inxi
     exfat
-    xxd];
+    xxd
+    usbutils];
 
   hardware.opengl.extraPackages = [
     pkgs.amdvlk
