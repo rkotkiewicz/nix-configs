@@ -46,6 +46,7 @@
      heroic
      phoronix-test-suite
      protonup-qt
+     bottles
    ];
 
   programs.git.enable = true;
