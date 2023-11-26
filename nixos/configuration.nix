@@ -112,11 +112,6 @@
     xxd
     usbutils];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-24.8.6"
-  ];
-
-
   hardware.opengl.extraPackages = [
     pkgs.amdvlk
   ];
