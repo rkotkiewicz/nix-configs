@@ -48,6 +48,7 @@
      protonup-qt
      bottles
      python3
+     calibre
    ];
 
   programs.git.enable = true;
