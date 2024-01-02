@@ -43,7 +43,7 @@
     };
 
   fileSystems."/mnt/magazyn" =
-    { device = "/dev/disk/by-uuid/203a4ff9-1138-4f34-b139-390717f984f2";
+    { device = "/dev/disk/by-uuid/82f6189b-fb18-4b9e-953b-7f66268b60b6";
       fsType = "btrfs";
       options = [ "subvol=magazyn" ];
     };
