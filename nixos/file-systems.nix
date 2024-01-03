@@ -6,16 +6,16 @@
 #    "/mnt/raw-backup".options = [ "compress=zstd" "discard=async" ];
     "/home" = {
         options = [ "compress=zstd" "discard=async" ];
-        dependsOn = [ "/" ];
+        depends = [ "/" ];
     };
 #    "/home/radek/Games".options = [ "compress=zstd" "discard=async" ];
     "/nix" = {
         options = [ "compress=zstd" "discard=async" ];
-        dependsOn = [ "/" ];
+        depends = [ "/" ];
     };
     "/mnt/magazyn" = {
         options = [ "compress=zstd" "discard=async" ];
-        dependsOn = [ "/" ];
+        depends = [ "/" ];
     };
 #    "/swap".options = [ "noatime" ];
   };
