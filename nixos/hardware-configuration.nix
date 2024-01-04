@@ -16,19 +16,19 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/203a4ff9-1138-4f34-b139-390717f984f2";
       fsType = "btrfs";
-      options = [ "subvol=root" ];
+      options = [ "subvol=root" "noatime" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/203a4ff9-1138-4f34-b139-390717f984f2";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "noatime" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/203a4ff9-1138-4f34-b139-390717f984f2";
       fsType = "btrfs";
-      options = [ "subvol=home" ];
+      options = [ "subvol=home" "noatime" ];
     };
 
   fileSystems."/boot" =
@@ -45,7 +45,7 @@
   fileSystems."/mnt/magazyn" =
     { device = "/dev/disk/by-uuid/82f6189b-fb18-4b9e-953b-7f66268b60b6";
       fsType = "btrfs";
-      options = [ "subvol=magazyn" ];
+      options = [ "subvol=magazyn" "noatime" ];
     };
 
   swapDevices = [ ];
