@@ -77,7 +77,11 @@
   services.unclutter.enable = true;
   virtualisation.docker.enable = true;
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplipWithPlugin ];
+  };
+
 
 
   security.rtkit.enable = true;
