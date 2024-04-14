@@ -1,10 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.autoNumlock = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.displayManager.defaultSession = "plasmawayland";
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
   services.xserver.xkb.layout = "pl";
 
   services.xserver.videoDrivers = lib.mkDefault [ "amdgpu" ];
