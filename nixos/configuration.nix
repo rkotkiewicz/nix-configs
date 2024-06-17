@@ -49,6 +49,8 @@
 
     kernelModules = [ "andgpu" "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
 
+    initrd.kernelModules = ["amdgpu"];
+
     kernelParams = [
       "video=card0-DP-2:3440x1440@144"
       "video=card0-HDMI-A-2:1920x1200@60,rotate=180"

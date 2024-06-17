@@ -8,7 +8,6 @@
   services.displayManager.defaultSession = "plasma";
   services.xserver.xkb.layout = "pl";
 
-  services.xserver.videoDrivers = lib.mkDefault [ "amdgpu" ];
 #  services.xserver.displayManager.setupCommands = ''
 #    CENTER='DP-0'
 #    RIGHT='HDMI-0'
