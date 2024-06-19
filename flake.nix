@@ -14,7 +14,7 @@
     hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = {nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = {nixpkgs, home-manager, hardware, ... }@inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -24,11 +24,11 @@
         modules = [
           ./nixos/configuration.nix
 
-          nixos-hardware.nixosModules.common-pc
-          nixos-hardware.nixosModules.common-pc-ssd
-          nixos-hardware.nixosModules.common-cpu-amd
-          nixos-hardware.nixosModules.common-cpu-amd-pstate
-          nixos-hardware.nixosModules.common-gpu-amd
+          hardware.nixosModules.common-pc
+          hardware.nixosModules.common-pc-ssd
+          hardware.nixosModules.common-cpu-amd
+          hardware.nixosModules.common-cpu-amd-pstate
+          hardware.nixosModules.common-gpu-amd
 
           home-manager.nixosModules.home-manager {
             home-manager = {
