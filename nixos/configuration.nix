@@ -70,9 +70,6 @@
   services.fwupd.enable = true;
 
 
-  hardware.opengl.enable = true;
-
-
   hardware.firmware = [ pkgs.alsa-firmware ];
   hardware.cpu.amd.updateMicrocode = true;
 
@@ -117,15 +114,6 @@
     exfat
     xxd
     usbutils];
-
-  hardware.opengl.extraPackages = [
-    pkgs.amdvlk
-  ];
-
-  # To enable Vulkan support for 32-bit applications, also add:
-  hardware.opengl.extraPackages32 = [
-    pkgs.driversi686Linux.amdvlk
-  ];
 
 
   nix = {
