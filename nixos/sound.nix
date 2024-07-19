@@ -1,6 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   services.pipewire = {
