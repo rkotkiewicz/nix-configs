@@ -107,7 +107,7 @@
     glxinfo
     mtr
     lm_sensors
-    ffmpeg_5
+    ffmpeg_7
     vulkan-tools
     libva-utils
     inxi
