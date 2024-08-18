@@ -55,12 +55,10 @@
       "video=card0-DP-2:3440x1440@144"
       "video=card0-HDMI-A-2:1920x1200@60,rotate=180"
       "modules_nct6775_args=force_id=0xd420"
-      "mem_sleep_default=s2idle"
     ];
 
 
     extraModprobeConfig = ''
-      options snd_hda_intel power_save=0 power_save_controller=0
       options nct6775 force_id=0xd420
     '';
   };
