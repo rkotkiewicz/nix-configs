@@ -49,6 +49,7 @@
      bottles
      python3
      calibre
+     discord-ptb
    ];
 
   programs.git.enable = true;
