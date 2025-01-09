@@ -71,7 +71,7 @@
   hardware.firmware = [ pkgs.alsa-firmware ];
   hardware.cpu.amd.updateMicrocode = true;
 
-  services.unclutter.enable = true;
+  services.unclutter.enable = false;
   virtualisation.docker.enable = true;
   # Enable CUPS to print documents.
   services.printing = {
