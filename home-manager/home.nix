@@ -50,6 +50,7 @@
      python3
      calibre
      discord-ptb
+     burpsuite
    ];
 
   programs.git.enable = true;
