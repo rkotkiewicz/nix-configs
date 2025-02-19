@@ -16,6 +16,8 @@
       ./display-server.nix
       ./sshd.nix
 #      ./ups.nix
+
+      ./home-assistant.nix
     ];
 
     nixpkgs = {
