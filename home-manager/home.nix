@@ -25,21 +25,17 @@
      gradle
      vial
      chromium
-     ark
      neovim
      smplayer
      mplayer
-     yakuake
      zoom-us
      libreoffice-qt
      lutris
-     kate
      lutris
      neofetch
      ncdu
      jetbrains.idea-community
      krusader
-     powerdevil
      wget
      libva-utils
      upscayl
@@ -52,6 +48,10 @@
      discord-ptb
      burpsuite
      floorp
+     kdePackages.ark
+     kdePackages.yakuake
+     kdePackages.kate
+     kdePackages.powerdevil
    ];
 
   programs.git.enable = true;
