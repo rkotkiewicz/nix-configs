@@ -51,6 +51,7 @@
      calibre
      discord-ptb
      burpsuite
+     floorp
    ];
 
   programs.git.enable = true;
