@@ -31,7 +31,6 @@
      zoom-us
      libreoffice-qt
      lutris
-     lutris
      neofetch
      ncdu
      jetbrains.idea-community
@@ -52,6 +51,7 @@
      kdePackages.yakuake
      kdePackages.kate
      kdePackages.powerdevil
+     tlrc
    ];
 
   programs.git.enable = true;
