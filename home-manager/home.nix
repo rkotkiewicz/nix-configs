@@ -52,6 +52,7 @@
      kdePackages.kate
      kdePackages.powerdevil
      tlrc
+     p7zip
    ];
 
   programs.git.enable = true;
