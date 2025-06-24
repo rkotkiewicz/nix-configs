@@ -53,6 +53,7 @@
      kdePackages.powerdevil
      tlrc
      p7zip
+     deluge
    ];
 
   programs.git.enable = true;
