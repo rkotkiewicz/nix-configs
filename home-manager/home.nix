@@ -33,7 +33,9 @@
      lutris
      neofetch
      ncdu
-     jetbrains.idea-community
+     (jetbrains.idea-community.override {
+        jdk = pkgs.openjdk21;
+     })
      krusader
      wget
      libva-utils
