@@ -46,7 +46,7 @@
      calibre
      discord-ptb
      burpsuite
-     floorp
+     floorp-bin
      kdePackages.ark
      kdePackages.yakuake
      kdePackages.kate
