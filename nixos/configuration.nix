@@ -104,7 +104,7 @@
     compsize
     vdpauinfo
     pciutils
-    glxinfo
+    mesa-demos
     mtr
     lm_sensors
     ffmpeg_7
