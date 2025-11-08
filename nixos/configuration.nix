@@ -86,8 +86,8 @@
   security.rtkit.enable = true;
 
   programs.corectrl.enable = true;
-  programs.corectrl.gpuOverclock.ppfeaturemask = "0xffffffff";
-  programs.corectrl.gpuOverclock.enable = true;
+  hardware.amdgpu.overdrive.ppfeaturemask = "0xffffffff";
+  hardware.amdgpu.overdrive.enable = true;
 
   programs.partition-manager.enable = true;
   programs.adb.enable = true;
