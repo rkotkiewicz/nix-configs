@@ -27,7 +27,7 @@
      chromium
      neovim
      smplayer
-     mplayer
+     mpv
      zoom-us
      libreoffice-qt
      lutris
