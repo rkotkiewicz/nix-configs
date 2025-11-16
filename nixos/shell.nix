@@ -10,9 +10,9 @@
     autosuggestions.enable = true;
     ohMyZsh = {
       enable = true;
-      customPkgs = [ pkgs.lambda-mod-zsh-theme ];
+#      customPkgs = [ pkgs.lambda-mod-zsh-theme ];
       plugins = [ "git" "colored-man-pages" ];
-      theme = "lambda-mod";
+#      theme = "lambda-mod";
     };
   };
   users.defaultUserShell = pkgs.zsh;
