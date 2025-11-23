@@ -92,8 +92,6 @@
   programs.partition-manager.enable = true;
   programs.adb.enable = true;
 
-  programs.htop.enable = true;
-
   services.acpid.enable = true;
 
   hardware.bluetooth.enable = true;
@@ -113,6 +111,7 @@
     inxi
     exfat
     xxd
+    btop
     usbutils];
 
 
