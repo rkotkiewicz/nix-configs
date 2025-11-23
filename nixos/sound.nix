@@ -9,21 +9,25 @@
     pulse.enable = true;
     wireplumber = {
       enable = true;
-      configPackages = [
-        (pkgs.writeTextDir "share/wireplumber/main.lua.d/90-suspend-timeout.lua" ''
-          rule = {
-             matches = {
-             {
-                { "node.name", "matches", "alsa_output.*" },
-              },
-            },
-            apply_properties = {
-              ["session.suspend-timeout-seconds"] = 0,
-            },
+      extraConfig."99-disable-suspend" = {
+        "monitor.alsa.rules" = [
+          {
+            matches = [
+              {
+                "node.name" = "~alsa_input.*";
+              }
+              {
+                "node.name" = "~alsa_output.*";
+              }
+            ];
+            actions = {
+              update-props = {
+                "session.suspend-timeout-seconds" = 0;
+              };
+            };
           }
-          table.insert(alsa_monitor.rules, rule)
-         '')
-      ];
+        ];
+      };
     };
     jack.enable = true;
   };
