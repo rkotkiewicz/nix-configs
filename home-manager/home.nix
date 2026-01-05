@@ -33,7 +33,7 @@
      lutris
      neofetch
      ncdu
-     jetbrains.idea-community
+     jetbrains.idea-oss
      krusader
      wget
      libva-utils
