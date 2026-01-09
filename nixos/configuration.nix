@@ -90,7 +90,6 @@
   hardware.amdgpu.overdrive.enable = true;
 
   programs.partition-manager.enable = true;
-  programs.adb.enable = true;
 
   services.acpid.enable = true;
 
