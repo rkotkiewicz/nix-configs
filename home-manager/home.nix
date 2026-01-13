@@ -54,6 +54,7 @@
      tlrc
      p7zip
      deluge
+     comma
    ];
 
   programs.git.enable = true;
