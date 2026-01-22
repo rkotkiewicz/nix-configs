@@ -55,6 +55,7 @@
      p7zip
      deluge
      comma
+     easyeffects
    ];
 
   programs.git.enable = true;
