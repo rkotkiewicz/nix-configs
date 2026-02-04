@@ -11,5 +11,5 @@ https://nixos.wiki/wiki/Overview_of_the_NixOS_Linux_distribution
 nix-env --list-generations --profile /nix/var/nix/profiles/system
 
 nix-env --delete-generations +5
-sudo nix-collect-garbage
+sudo nix-collect-garbage -d
 nix-collect-garbage
