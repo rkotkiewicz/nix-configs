@@ -109,7 +109,8 @@
     exfat
     xxd
     btop
-    usbutils];
+    usbutils
+    age];
 
 
   nix = {
