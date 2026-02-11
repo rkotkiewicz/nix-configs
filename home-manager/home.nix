@@ -56,7 +56,9 @@
      deluge
      comma
      easyeffects
+     solo2-cli
    ];
+
 
   programs.git.enable = true;
 
