@@ -57,6 +57,7 @@
      comma
      easyeffects
      solo2-cli
+     esphome
    ];
 
 
