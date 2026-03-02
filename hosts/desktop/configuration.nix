@@ -29,6 +29,8 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
 
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;

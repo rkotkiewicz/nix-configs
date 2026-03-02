@@ -27,6 +27,14 @@
 
         modules = [ ./hosts/desktop ];
       };
+
+      malina = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+
+        system = "aarch64-linux";
+
+        modules = [ ./hosts/malina ];
+      };
     };
   };
 }
