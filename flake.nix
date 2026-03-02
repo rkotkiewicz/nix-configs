@@ -18,34 +18,14 @@
   };
 
   outputs = {nixpkgs, home-manager, hardware, sops-nix, ... }@inputs: {
-    # NixOS configuration entrypoint
+
     nixosConfigurations = {
-      "nix-pc" = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
 
         system = "x86_64-linux";
 
-        modules = [
-          ./nixos/configuration.nix
-
-          hardware.nixosModules.common-pc
-          hardware.nixosModules.common-pc-ssd
-          hardware.nixosModules.common-cpu-amd
-          hardware.nixosModules.common-cpu-amd-pstate
-          hardware.nixosModules.common-gpu-amd
-
-          sops-nix.nixosModules.sops
-
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.radek = {
-                imports = [ ./home-manager/home.nix ];
-              };
-            };
-          }
-        ];
+        modules = [ ./hosts/desktop ];
       };
     };
   };

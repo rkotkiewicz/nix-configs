@@ -5,19 +5,7 @@
 { inputs, lib, config, pkgs, ... }:
 
 {
-  imports = [
-      ./hardware-configuration.nix
-      ./user.nix
-      ./file-systems.nix
-#      ./btrbk.nix
-      ./locale.nix
-      ./sound.nix
-      ./shell.nix
-      ./display-server.nix
-      ./sshd.nix
-      ./solokey2.nix
-#      ./ups.nix
-    ];
+
 
     nixpkgs = {
       # You can add overlays here

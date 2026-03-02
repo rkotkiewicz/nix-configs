@@ -3,7 +3,7 @@ My nixos, home-manager and nix flakes configurations.
 
 nix flake update --commit-lock-file
 
-sudo nixos-rebuild switch --flake .#
+sudo nixos-rebuild switch --flake .#desktop
 
 
 https://nixos.wiki/wiki/Overview_of_the_NixOS_Linux_distribution
