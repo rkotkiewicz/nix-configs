@@ -62,4 +62,6 @@
       port = 6052;
       openFirewall = true;
     };
+
+    services.matter-server.enable = true;
 }
