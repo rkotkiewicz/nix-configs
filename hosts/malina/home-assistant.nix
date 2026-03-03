@@ -13,6 +13,7 @@
       "esphome"
       "matter"
       "thread"
+      "otbr"
     ];
     config = {
       default_config = {};
