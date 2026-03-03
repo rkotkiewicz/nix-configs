@@ -28,7 +28,6 @@
   
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-
     binfmt.emulatedSystems = [ "aarch64-linux" ];
 
     loader = {
@@ -46,6 +45,7 @@
       "video=card0-DP-2:3440x1440@144"
       "video=card0-HDMI-A-2:1920x1200@60,rotate=180"
       "modules_nct6775_args=force_id=0xd420"
+      "amdgpu.gpu_recovery=1"
     ];
 
 
