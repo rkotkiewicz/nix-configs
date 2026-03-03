@@ -31,7 +31,7 @@
           port = 8080;
         };
         serial = {
-          port = "/dev/ttyUSB0";
+          port = "/dev/serial/by-id/usb-SMLIGHT_SMLIGHT_SLZB-06_2cab238c087fef11b9551e1cedd322a4-if00-port0";
           baudrate = 115200;
           adapter = "zstack";
         };
