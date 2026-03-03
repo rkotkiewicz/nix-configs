@@ -12,6 +12,7 @@
       "xiaomi_miio"
       "esphome"
       "matter"
+      "thread"
     ];
     config = {
       default_config = {};
