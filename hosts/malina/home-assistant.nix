@@ -11,6 +11,7 @@
       "yeelight"
       "xiaomi_miio"
       "esphome"
+      "matter"
     ];
     config = {
       default_config = {};
