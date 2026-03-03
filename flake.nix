@@ -15,9 +15,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    deploy-rs.url = "github:serokell/deploy-rs";
   };
 
-  outputs = {nixpkgs, home-manager, hardware, sops-nix, ... }@inputs: {
+  outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, ... }@inputs: {
 
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
@@ -36,5 +38,17 @@
         modules = [ ./hosts/malina ];
       };
     };
+
+    deploy.nodes.malina = {
+      hostname = "malina";
+      profiles.system = {
+        sshUser = "nixos";
+        user = "root";
+        sshOpts = [ "-A" ];
+        path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.malina;
+      };
+    };
+
+    checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
   };
 }

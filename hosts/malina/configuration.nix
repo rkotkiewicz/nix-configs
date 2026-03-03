@@ -17,7 +17,10 @@
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [ "root" "nixos" ];
+  };
 
   environment.systemPackages = with pkgs; [
     git

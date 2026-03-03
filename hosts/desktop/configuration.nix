@@ -103,7 +103,9 @@
     usbutils
     age
     pam_u2f
-    libfido2];
+    libfido2
+    deploy-rs
+  ];
 
 
   nix = {
