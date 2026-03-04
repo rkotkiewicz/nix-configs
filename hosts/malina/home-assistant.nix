@@ -14,6 +14,7 @@
       "matter"
       "thread"
       "otbr"
+      "isal"
     ];
     config = {
       default_config = {};
