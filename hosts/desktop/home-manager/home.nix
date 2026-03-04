@@ -43,7 +43,7 @@
      protonup-qt
      bottles
      python3
-     calibre
+     #calibre
      discord-ptb
      burpsuite
      floorp-bin
