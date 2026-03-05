@@ -45,7 +45,7 @@
     services.sudo.rssh = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ 8080 8123 ];
+  networking.firewall.allowedTCPPorts = [ 8080 8123 8081 ];
   networking.firewall.allowedUDPPorts = [ 8080 ];
 
   users.users.nixos = {

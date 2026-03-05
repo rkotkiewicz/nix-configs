@@ -2,28 +2,32 @@
 
 {
 
-#  virtualisation.oci-containers = {
-#    backend = "docker";
-#    containers.otbr = {
-#      image = "ghcr.io/ownbee/hass-otbr-docker:latest";
-#
-#      autoStart = false;
-#
-#      environment = {
-#        OTBR_RADIO_URL = "spinel+hdlc+tcp://192.168.2.162:7638";
-#        OT_INFRA_IF = "eth0";
-#        OT_THREAD_IF = "wpan0";
-#        OT_LOG_LEVEL = "7";
-#      };
-#
-#      extraOptions = [
-#        "--network=host"
-#        "--cap-add=NET_ADMIN"
-#        "--device=/dev/net/tun"
-#        "--volume=/var/lib/otbr:/data"
-#      ];
-#    };
-#  };
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers.otbr = {
+      image = "openthread/border-router:latest";
+
+      autoStart = true;
+
+      environment = {
+        OT_RCP_DEVICE = "spinel+hdlc+uart:///dev/ttyACM1?uart-baudrate=460800";
+        OT_INFRA_IF = "eth0";
+        OT_THREAD_IF = "wpan0";
+        OT_LOG_LEVEL = "7";
+
+        OTBR_WEB_PORT = "8081";
+      };
+
+      extraOptions = [
+        "--network=host"
+        "--cap-add=NET_ADMIN"
+        "--privileged"
+        "--device=/dev/ttyACM1"
+        "--device=/dev/net/tun"
+        "--volume=/var/lib/otbr:/data"
+      ];
+    };
+  };
 
 #  boot.kernel.sysctl = {
 #    "net.ipv6.conf.all.forwarding" = 1;

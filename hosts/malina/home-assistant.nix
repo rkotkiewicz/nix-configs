@@ -35,7 +35,7 @@
           port = 8080;
         };
         serial = {
-          port = "tcp://slzb-mr5u.lan:6638";
+          port = "/dev/serial/by-id/usb-SMLIGHT_SMLIGHT_SLZB-MR5U_SLZB-MR5U234054-if00";
           baudrate = 115200;
           adapter = "ember";
         };
