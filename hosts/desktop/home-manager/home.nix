@@ -31,7 +31,7 @@
      zoom-us
      libreoffice-qt
      lutris
-     neofetch
+     fastfetch
      ncdu
      jetbrains.idea-oss
      krusader
