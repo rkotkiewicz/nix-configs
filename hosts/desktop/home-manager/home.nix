@@ -31,6 +31,7 @@
      zoom-us
      libreoffice-qt
      lutris
+     faugus-launcher
      fastfetch
      ncdu
      jetbrains.idea-oss
