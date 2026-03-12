@@ -15,7 +15,6 @@ in
     hardwareModules.raspberry-pi-3
     sopsModules.sops
 
-    ./home-assistant.nix
-    ./otbr.nix];
+    ./home-assistant.nix];
 }
 
