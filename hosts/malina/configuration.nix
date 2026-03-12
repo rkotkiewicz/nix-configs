@@ -18,6 +18,7 @@
   networking.interfaces.eth0.useDHCP = true;
 
   nix.settings = {
+    download-buffer-size = 524288000; # 500 MiB
     experimental-features = [ "nix-command" "flakes" ];
     trusted-users = [ "root" "nixos" ];
   };
