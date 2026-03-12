@@ -13,6 +13,7 @@
       "esphome"
       "matter"
       "thread"
+      "otbr"
       "isal"
     ];
     config = {
