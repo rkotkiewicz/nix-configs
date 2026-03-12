@@ -52,7 +52,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     openssh.authorizedKeys.keys = [
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIJSTiqfCvDnjUbPlFcp0+JAx6EBP3z5ERb6DTjAFJcFnAAAABHNzaDo= radek@nix-pc"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIJSTiqfCvDnjUbPlFcp0+JAx6EBP3z5ERb6DTjAFJcFnAAAABHNzaDo= radek@pc"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBOXmInDpsNfNHyDqYFghEeiui4dcTxHEdRDfCh3ZUFW backup-key-2026-02-12"
     ];
   };

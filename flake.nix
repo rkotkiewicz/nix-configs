@@ -22,12 +22,12 @@
   outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, ... }@inputs: {
 
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      pc = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
 
         system = "x86_64-linux";
 
-        modules = [ ./hosts/desktop ];
+        modules = [ ./hosts/pc ];
       };
 
       malina = nixpkgs.lib.nixosSystem {

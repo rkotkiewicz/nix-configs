@@ -53,7 +53,7 @@
       options nct6775 force_id=0xd420
     '';
   };
-  networking.hostName = "nix-pc"; # Define your hostname.
+  networking.hostName = "pc";
 
 
   services.fwupd.enable = true;
@@ -107,6 +107,7 @@
     deploy-rs
   ];
 
+  programs.nh.enable = true;
 
   nix = {
     # This will add each flake input as a registry

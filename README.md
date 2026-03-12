@@ -3,7 +3,7 @@ My nixos, home-manager and nix flakes configurations.
 
 nix flake update --commit-lock-file
 
-sudo nixos-rebuild switch --flake .#desktop
+sudo nh os switch .#pc
 deploy .#malina
 
 
