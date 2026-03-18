@@ -37,7 +37,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "andgpu" "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
+    kernelModules = [ "amdgpu" "nct6775" "snd_hda_intel" "snd_hda_codec_ca0132" ];
 
     initrd.kernelModules = ["amdgpu"];
 
