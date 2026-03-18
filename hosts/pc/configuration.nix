@@ -44,7 +44,6 @@
     kernelParams = [
       "video=card0-DP-2:3440x1440@144"
       "video=card0-HDMI-A-2:1920x1200@60,rotate=180"
-      "amdgpu.gpu_recovery=1"
     ];
   };
   networking.hostName = "pc";
