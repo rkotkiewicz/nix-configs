@@ -82,7 +82,7 @@
 
   services.acpid.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
 
   programs.gamescope.enable = true;
  
