@@ -3,7 +3,7 @@
 {
   users.users.radek = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" "docker" ];
+    extraGroups = [ "wheel" "dialout" "docker" "plugdev"];
   };
 
   programs.kdeconnect.enable = true;

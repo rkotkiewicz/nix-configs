@@ -56,6 +56,8 @@
   networking.hostName = "pc";
 
 
+  users.groups.plugdev = {};
+
   services.fwupd.enable = true;
 
 
