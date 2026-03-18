@@ -49,6 +49,7 @@
   };
   networking.hostName = "pc";
 
+  services.avahi.enable = true;
 
   users.groups.plugdev = {};
 
