@@ -15,6 +15,7 @@
       "thread"
       "otbr"
       "isal"
+      "home_connect"
     ];
     config = {
       default_config = {};
