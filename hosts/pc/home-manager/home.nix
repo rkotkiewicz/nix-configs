@@ -59,7 +59,23 @@
      easyeffects
      solo2-cli
      esphome
+     go-hass-agent
    ];
+
+  systemd.user.services.go-hass-agent = {
+    Unit = {
+      Description = "Go Home Assistant Agent";
+      After = [ "network-online.target" "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.go-hass-agent}/bin/go-hass-agent";
+      Restart = "on-failure";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
 
 
   programs.git.enable = true;
