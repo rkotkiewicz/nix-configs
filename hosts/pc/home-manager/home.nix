@@ -68,7 +68,7 @@
       After = [ "network-online.target" "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.go-hass-agent}/bin/go-hass-agent";
+      ExecStart = "${pkgs.go-hass-agent}/bin/go-hass-agent-amd64 run";
       Restart = "on-failure";
     };
     Install = {
