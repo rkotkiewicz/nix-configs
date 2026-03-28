@@ -104,7 +104,12 @@
     deploy-rs
   ];
 
-  programs.nh.enable = true;
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    flake = "/home/radek/programowanie/nix-configs";
+  };
 
   nix = {
     # This will add each flake input as a registry
