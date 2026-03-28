@@ -16,6 +16,7 @@ in
     sopsModules.sops
 
     ./home-assistant.nix
-    ./avahi.nix];
+    ./avahi.nix
+    ./gc.nix];
 }
 
