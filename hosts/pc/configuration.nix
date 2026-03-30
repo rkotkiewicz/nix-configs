@@ -110,6 +110,7 @@
     clean.extraArgs = "--keep-since 7d --keep 5";
     flake = "/home/radek/programowanie/nix-configs";
   };
+  programs.nix-ld.enable = true;
 
   nix = {
     # This will add each flake input as a registry
