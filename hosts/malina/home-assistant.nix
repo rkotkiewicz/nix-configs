@@ -16,6 +16,7 @@
       "otbr"
       "isal"
       "home_connect"
+      "shelly"
     ];
     config = {
       default_config = {};
