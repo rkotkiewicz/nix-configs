@@ -102,6 +102,7 @@
     pam_u2f
     libfido2
     deploy-rs
+    amdgpu_top
   ];
 
   programs.nh = {
