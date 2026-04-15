@@ -25,5 +25,13 @@
     sudo.u2fAuth = true;
   };
 
+  security.pam.u2f = {
+    enable = true;
+    settings = {
+      cue = true;
+      interactive = true;
+    };
+  };
+
   programs.ssh.startAgent = true;
 }
