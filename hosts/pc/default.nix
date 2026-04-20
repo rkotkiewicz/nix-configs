@@ -20,6 +20,8 @@ in
 
 
     ../../common/locale.nix
+    ../../common/sops.nix
+
 
     hardwareModules.common-pc
     hardwareModules.common-pc-ssd

@@ -11,6 +11,7 @@ in
     ./hardware-configuration.nix
 
     ../../common/locale.nix
+    ../../common/sops.nix
 
     hardwareModules.raspberry-pi-3
     sopsModules.sops

@@ -103,6 +103,7 @@
     libfido2
     deploy-rs
     amdgpu_top
+    sops
   ];
 
   programs.nh = {

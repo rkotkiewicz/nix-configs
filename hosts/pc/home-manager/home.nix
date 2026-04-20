@@ -74,6 +74,12 @@
     Install = {
       WantedBy = [ "graphical-session.target" ];
     };
+
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "5s";
+      TimeoutStopSec = "5s";
+    };
   };
 
 

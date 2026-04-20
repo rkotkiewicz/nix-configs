@@ -1,6 +1,15 @@
 { inputs, lib, config, pkgs, ... }:
 
 {
+  sops = {
+    secrets.mosquitto_shadow = {
+      owner = "mosquitto";
+    };
+    secrets.mosquitto_pass_env = {
+      owner = "mosquitto";
+    };
+  };
+
   services.home-assistant = {
     enable = true;
     extraComponents = [
@@ -25,47 +34,57 @@
   };
 
 
-    services.zigbee2mqtt = {
-      enable = true;
-      settings = {
-        mqtt = {
-          base_topic = "zigbee2mqtt";
-          server = "mqtt://localhost:1883";
-        };
+  services.zigbee2mqtt = {
+    enable = true;
 
-        frontend = {
-          port = 8080;
-        };
-        serial = {
-          port = "tcp://slzb-mr5u.lan:6638";
-          baudrate = 115200;
-          adapter = "ember";
-        };
-
+    settings = {
+      mqtt = {
+        base_topic = "zigbee2mqtt";
+        server = "mqtt://localhost:1883";
+        user = "mosquitto_listener";
+      };
+      frontend = {
+        port = 8080;
+      };
+      serial = {
+        port = "tcp://slzb-mr5u.lan:6638";
+        baudrate = 115200;
+        adapter = "ember";
       };
     };
-
-      systemd.services.zigbee2mqtt = {
-        requires = [
-        "mosquitto.service"
-        "network-online.target"];
+  };
 
 
-        after = [ "mosquitto.service" "network-online.target" ];
-      };
 
-    services.mosquitto = {
-      enable = true;
-      settings = {
-      };
+  systemd.services.zigbee2mqtt = {
+    requires = [
+      "mosquitto.service"
+      "network-online.target"];
+    after = [ "mosquitto.service" "network-online.target" ];
+    serviceConfig = {
+        EnvironmentFile = [ config.sops.secrets.mosquitto_pass_env.path ];
     };
+  };
 
-    services.esphome = {
-      enable = true;
+  services.mosquitto = {
+    enable = true;
+    listeners = [{
+      port = 1883;
       address = "0.0.0.0";
-      port = 6052;
-      openFirewall = true;
-    };
+      users.mosquitto_listener = {
+        acl = [ "readwrite #" ];
+        hashedPasswordFile = config.sops.secrets.mosquitto_shadow.path;
+      };
+      settings.allow_anonymous = false;
+    }];
+  };
 
-    services.matter-server.enable = true;
+  services.esphome = {
+    enable = true;
+    address = "0.0.0.0";
+    port = 6052;
+    openFirewall = true;
+  };
+
+  services.matter-server.enable = true;
 }

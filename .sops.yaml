@@ -1,0 +1,9 @@
+creation_rules:
+  - path_regex: secrets/.*\.yaml
+    key_groups:
+      - age:
+          - age1az03mzkvy5jfh24helqkyveydvrzd6dyg4ejm0e4easajmn7yyxqvc5fx4
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAJtnInq4+GgnLhx7Z3FhsKBO0ReSPilFx05Kxv2i8m5
+          - age1mkqq4xp0jx03ruzadg7xfyp3qg4q9kv7hg9g303mdr9uhas5cs6q9ppzhk
+
+
