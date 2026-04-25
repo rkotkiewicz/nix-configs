@@ -1,11 +1,20 @@
 { inputs, lib, config, pkgs, ... }: {
 
   services.xserver.enable = true;
-  services.displayManager.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.autoNumlock = true;
+  services.displayManager = {
+    enable = true;
+    sddm = {
+      autoNumlock = true;
+      wayland = {
+        enable = true;
+        compositor = "kwin";
+      };
+    };
+    defaultSession = "plasma";
+  };
+
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
+
   services.xserver.xkb.layout = "pl";
 
 #  services.xserver.displayManager.setupCommands = ''
