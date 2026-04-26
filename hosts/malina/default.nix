@@ -17,6 +17,8 @@ in
     sopsModules.sops
 
     ./home-assistant.nix
+    ./uptime-kuma.nix
+
     ./avahi.nix
     ./gc.nix];
 }
