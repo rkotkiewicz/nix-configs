@@ -1,13 +1,9 @@
-{ inputs, lib, config, pkgs, ... }:
+{ ... }:
 
 {
-  sops = {
-    secrets.mosquitto_shadow = {
-      owner = "mosquitto";
-    };
-    secrets.mosquitto_pass_env = {
-      owner = "mosquitto";
-    };
+  sops.secrets.homeassistant = {
+    path = "/var/lib/hass/secrets.yaml";
+    owner = "hass";
   };
 
   services.home-assistant = {
@@ -30,6 +26,20 @@
     config = {
       default_config = {};
       automation = "!include automations.yaml";
+
+      homeassistant = {
+        name = "Dom";
+        latitude = "!secret latitude";
+        longitude = "!secret longitude";
+        elevation = "!secret elevation";
+        unit_system = "metric";
+        time_zone = "Europe/Warsaw";
+      };
     };
+  };
+
+  systemd.services.home-assistant = {
+    after = [ "sops-nix.service" ];
+    requires = [ "sops-nix.service" ];
   };
 }
