@@ -18,6 +18,9 @@ in
 
     ./home-assistant.nix
     ./uptime-kuma.nix
+    ./zigbee2mqtt.nix
+    ./matter.nix
+    ./moquitto.nix
 
     ./avahi.nix
     ./gc.nix];
