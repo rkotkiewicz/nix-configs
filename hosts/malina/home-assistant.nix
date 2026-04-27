@@ -37,9 +37,4 @@
       };
     };
   };
-
-  systemd.services.home-assistant = {
-    after = [ "sops-nix.service" ];
-    requires = [ "sops-nix.service" ];
-  };
 }

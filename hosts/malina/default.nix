@@ -20,7 +20,7 @@ in
     ./uptime-kuma.nix
     ./zigbee2mqtt.nix
     ./matter.nix
-    ./moquitto.nix
+    ./mosquitto.nix
 
     ./avahi.nix
     ./gc.nix];
