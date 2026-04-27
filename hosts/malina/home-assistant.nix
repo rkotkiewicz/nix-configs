@@ -79,12 +79,5 @@
     }];
   };
 
-  services.esphome = {
-    enable = true;
-    address = "0.0.0.0";
-    port = 6052;
-    openFirewall = true;
-  };
-
   services.matter-server.enable = true;
 }
