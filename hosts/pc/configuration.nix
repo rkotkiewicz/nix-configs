@@ -10,6 +10,11 @@
     nixpkgs = {
       # You can add overlays here
       overlays = [
+      (_: prev: {
+            openldap = prev.openldap.overrideAttrs {
+              doCheck = !prev.stdenv.hostPlatform.isi686;
+            };
+          })
         # If you want to use overlays exported from other flakes:
         # neovim-nightly-overlay.overlays.default
 
