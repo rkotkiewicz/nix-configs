@@ -45,7 +45,7 @@
      bottles
      python3
      calibre
-     discord-ptb
+     discord
      burpsuite
      floorp-bin
      kdePackages.ark
