@@ -6,6 +6,9 @@ My nixos, home-manager and nix flakes configurations.
 
 `nh os switch .#pc`
 
+
+`nix build .#nixosConfigurations.malina.config.system.build.toplevel --out-link .last-build-malina`
+
 `deploy .#malina`
 
 
