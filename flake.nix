@@ -16,7 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, ... }@inputs: {
