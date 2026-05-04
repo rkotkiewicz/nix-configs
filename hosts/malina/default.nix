@@ -23,6 +23,8 @@ in
     ./mosquitto.nix
 
     ./avahi.nix
-    ./gc.nix];
+    ./gc.nix
+
+    ./disable-docs.nix];
 }
 
