@@ -60,6 +60,7 @@
      solo2-cli
      esphome
      go-hass-agent
+     claude-code
    ];
 
   systemd.user.services.go-hass-agent = {
