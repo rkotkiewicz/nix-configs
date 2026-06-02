@@ -79,6 +79,7 @@
   programs.corectrl.enable = true;
   hardware.amdgpu.overdrive.ppfeaturemask = "0xffffffff";
   hardware.amdgpu.overdrive.enable = true;
+  services.lact.enable = true;
 
   programs.partition-manager.enable = true;
 
