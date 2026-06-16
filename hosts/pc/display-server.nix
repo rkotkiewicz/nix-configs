@@ -3,13 +3,8 @@
   services.xserver.enable = true;
   services.displayManager = {
     enable = true;
-    sddm = {
-      autoNumlock = true;
-      wayland = {
-        enable = true;
-        compositor = "kwin";
-      };
-    };
+    plasma-login-manager.enable = true;
+    sddm.enable = false;
     defaultSession = "plasma";
   };
 
