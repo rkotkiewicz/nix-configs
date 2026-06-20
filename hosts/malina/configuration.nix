@@ -5,10 +5,25 @@
 { config, pkgs, ... }:
 
 {
-  boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  boot.kernelModules = [ "bcm2835-v4l2" ];
+  boot.kernelPackages = pkgs.linuxPackages.extend (self: super: {
+    kernel = super.kernel.override {
+      structuredExtraConfig = with pkgs.lib.kernel; {
+        PREEMPT_NONE = yes;
+        PREEMPT_VOLUNTARY = no;
+        PREEMPT = no;
+      };
+    };
+  });
+
+  powerManagement.cpuFreqGovernor = "performance";
+
+  boot.kernel.sysctl = {
+    "kernel.sched_autogroup_enabled" = 0;
+    "vm.swappiness" = 10;
+    "vm.vfs_cache_pressure" = 200;
+  };
 
   hardware.enableRedistributableFirmware = true;
 
