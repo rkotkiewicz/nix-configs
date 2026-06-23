@@ -6,17 +6,6 @@
 
 {
   boot.loader.generic-extlinux-compatible.enable = true;
-
-  boot.kernelPackages = pkgs.linuxPackages.extend (self: super: {
-    kernel = super.kernel.override {
-      structuredExtraConfig = with pkgs.lib.kernel; {
-        PREEMPT_NONE = yes;
-        PREEMPT_VOLUNTARY = no;
-        PREEMPT = no;
-      };
-    };
-  });
-
   powerManagement.cpuFreqGovernor = "performance";
 
   boot.kernel.sysctl = {
