@@ -110,6 +110,8 @@
     deploy-rs
     amdgpu_top
     sops
+    exfatprogs
+    exfat
   ];
 
   programs.nh = {
