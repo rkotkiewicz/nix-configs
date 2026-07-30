@@ -34,7 +34,7 @@
      faugus-launcher
      fastfetch
      ncdu
-     jetbrains.idea-oss
+     jetbrains.idea
      krusader
      wget
      libva-utils
@@ -62,26 +62,27 @@
      go-hass-agent
      claude-code
    ];
-
-  systemd.user.services.go-hass-agent = {
-    Unit = {
-      Description = "Go Home Assistant Agent";
-      After = [ "network-online.target" "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.go-hass-agent}/bin/go-hass-agent-amd64 run";
-      Restart = "on-failure";
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-
-    serviceConfig = {
-      Restart = "on-failure";
-      RestartSec = "5s";
-      TimeoutStopSec = "5s";
-    };
-  };
+#
+#  systemd.user.services.go-hass-agent = {
+#    enabled = false;
+#    Unit = {
+#      Description = "Go Home Assistant Agent";
+#      After = [ "network-online.target" "graphical-session.target" ];
+#    };
+#    Service = {
+#      ExecStart = "${pkgs.go-hass-agent}/bin/go-hass-agent-amd64 run";
+#      Restart = "on-failure";
+#    };
+#    Install = {
+#      WantedBy = [ "graphical-session.target" ];
+#    };
+#
+#    serviceConfig = {
+#      Restart = "on-failure";
+#      RestartSec = "5s";
+#      TimeoutStopSec = "5s";
+#    };
+#  };
 
 
 
