@@ -112,6 +112,7 @@
     sops
     exfatprogs
     exfat
+    kdiskmark
   ];
 
   programs.nh = {
