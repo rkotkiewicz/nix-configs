@@ -17,7 +17,6 @@ in
     ./sshd.nix
     ./solokey2.nix
 #      ./ups.nix
-    ./ollama.nix
 
     ../../common/locale.nix
     ../../common/sops.nix

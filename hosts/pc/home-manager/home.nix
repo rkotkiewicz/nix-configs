@@ -61,6 +61,7 @@
      esphome
      go-hass-agent
      claude-code
+     lmstudio
    ];
 #
 #  systemd.user.services.go-hass-agent = {
