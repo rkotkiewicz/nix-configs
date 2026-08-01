@@ -34,6 +34,7 @@ in
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
         users.radek = {
           imports = [ ./home-manager/home.nix ];
         };

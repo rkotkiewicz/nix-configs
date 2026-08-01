@@ -30,7 +30,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, ... }@inputs: {
+  outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, firefox-addons, ... }@inputs: {
 
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {

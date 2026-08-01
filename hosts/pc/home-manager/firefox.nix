@@ -1,10 +1,20 @@
-{ config, pkgs, theme, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.firefox = {
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles.default = {
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+        (ublock-origin.override {
+          installation_mode = "normal_allowed_in_private_browsing";
+        })
+        bitwarden
+        return-youtube-dislikes
+        unpaywall
+        plasma-integration
+      ];
+
       settings = {
         "dom.ipc.processCount" = 64;
         "dom.ipc.processCount.webIsolated" = 32;
