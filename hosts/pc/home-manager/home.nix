@@ -11,6 +11,9 @@
     # ./nvim.nix
     ./firefox.nix
     ./texlive.nix
+
+    inputs.plasma-manager.homeModules.plasma-manager
+    ./plasma.nix
   ];
 
 
