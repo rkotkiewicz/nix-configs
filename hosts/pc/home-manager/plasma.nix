@@ -7,7 +7,7 @@
       lookAndFeel = "org.kde.breezedark.desktop";
       theme = "breeze-dark";
       iconTheme = "breeze-dark";
-      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Mountain/contents/images_dark/3440x1440.png";
+      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Mountain/contents/images_dark/5120x2880.png";
     };
     kwin = {
       effects = {
