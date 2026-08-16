@@ -47,9 +47,7 @@
      protonup-qt
      bottles
      python3
-     (pkgs.calibre.override {
-       ffmpeg = pkgs.ffmpeg_8;
-     })
+     calibre
      discord
      burpsuite
      floorp-bin
