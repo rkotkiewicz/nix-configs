@@ -28,6 +28,8 @@
     package = pkgs.home-assistant.override {
       extraPackages = pyPkgs: with pyPkgs; [
         pysmlight
+        bleak-smlight
+        python-otbr-api
       ];
     };
 
