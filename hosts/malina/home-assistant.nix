@@ -25,6 +25,12 @@
       "plant"
     ];
 
+    package = pkgs.home-assistant.override {
+      extraPackages = pyPkgs: with pyPkgs; [
+        pysmlight
+      ];
+    };
+
     config = {
       default_config = {};
       automation = "!include automations.yaml";
