@@ -15,9 +15,8 @@
     users.groups.matter = { };
 
     virtualisation.oci-containers.containers.matter-server = {
-      image = "ghcr.io/home-assistant-libs/python-matter-server:8.1.2";
+      image = "ghcr.io/matter-js/matterjs-server:1.4.0";
       podman.user = "matter";
-      autoStart = false;
       extraOptions = [ "--network=host" ];
       volumes = [ "/var/lib/matter-server/data:/data" ];
     };
