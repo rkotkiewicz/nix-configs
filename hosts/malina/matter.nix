@@ -1,5 +1,24 @@
 { ... }:
 
 {
-  services.matter-server.enable = true;
+    users.users.matter = {
+      isSystemUser = true;
+      home = "/var/lib/matter-server";
+      createHome = true;
+      group = "matter";
+      linger = true;
+      autoSubUidGidRange = true;
+      shell = "/run/current-system/sw/bin/nologin";
+      hashedPassword = "!";
+    };
+
+    users.groups.matter = { };
+
+    virtualisation.oci-containers.containers.matter-server = {
+      image = "ghcr.io/home-assistant-libs/python-matter-server:8.1.2";
+      podman.user = "matter";
+      autoStart = false;
+      extraOptions = [ "--network=host" ];
+      volumes = [ "/var/lib/matter-server/data:/data" ];
+    };
 }
