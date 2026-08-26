@@ -17,7 +17,11 @@
     virtualisation.oci-containers.containers.matter-server = {
       image = "ghcr.io/matter-js/matterjs-server:1.4.0";
       podman.user = "matter";
-      extraOptions = [ "--network=host" ];
+      extraOptions = [
+        "--network=host"
+        "--userns=keep-id:uid=1000,gid=1000"
+      ];
+
       volumes = [ "/var/lib/matter-server/data:/data" ];
     };
 }
