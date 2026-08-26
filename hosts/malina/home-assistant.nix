@@ -36,6 +36,8 @@
         "--network=host"
         "--memory=750m"
         "--memory-swap=1g"
+        "--cap-add=NET_ADMIN"
+        "--cap-add=NET_RAW"
       ];
 
       volumes = [
