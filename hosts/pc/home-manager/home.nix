@@ -65,6 +65,7 @@
      go-hass-agent
      claude-code
      lmstudio
+     rustdesk
    ];
 #
 #  systemd.user.services.go-hass-agent = {
