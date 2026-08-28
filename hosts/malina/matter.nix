@@ -23,5 +23,10 @@
       ];
 
       volumes = [ "/var/lib/matter-server/data:/data" ];
+
+      environment = {
+        PRIMARY_INTERFACE = "eth0";
+        LISTEN_ADDRESS = "127.0.0.1";
+      };
     };
 }
