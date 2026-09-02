@@ -29,11 +29,4 @@
       };
     };
   };
-
-  xdg.desktopEntries.firefox = {
-    name = "Firefox (Wayland Debug)";
-    exec = "env WAYLAND_DEBUG=1 firefox %u";
-    terminal = false;
-    categories = [ "Network" "WebBrowser" ];
-  };
 }
