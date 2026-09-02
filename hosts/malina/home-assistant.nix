@@ -29,7 +29,7 @@
   virtualisation.oci-containers = {
     backend = "podman";
     containers.homeassistant = {
-      image = "ghcr.io/home-assistant/home-assistant:2026.8.2";
+      image = "ghcr.io/home-assistant/home-assistant:2026.9.0";
       podman.user = "homeassistant";
 
       extraOptions = [
