@@ -137,6 +137,7 @@
       experimental-features = ["nix-command" "flakes"];
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+      cores = 8;
 
       # Extra binary cache with better aarch64 coverage for niche packages
       substituters = [ "https://cache.nixos.org/" "https://nix-community.cachix.org" ];

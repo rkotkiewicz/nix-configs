@@ -10,6 +10,9 @@
     enable = true;
 
     settings = {
+      homeassistant = {
+        enabled = true;
+      };
       mqtt = {
         base_topic = "zigbee2mqtt";
         server = "mqtt://localhost:1883";
