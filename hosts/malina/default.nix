@@ -21,6 +21,7 @@ in
     ./zigbee2mqtt.nix
     ./matter.nix
     ./mosquitto.nix
+    ./podman.nix
 
     ./avahi.nix
     ./gc.nix

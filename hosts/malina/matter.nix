@@ -15,7 +15,11 @@
     users.groups.matter = { };
 
     virtualisation.oci-containers.containers.matter-server = {
-      image = "ghcr.io/matter-js/matterjs-server:1.4.0";
+      image = "ghcr.io/matter-js/matterjs-server:stable";
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
+
       podman.user = "matter";
       extraOptions = [
         "--network=host"

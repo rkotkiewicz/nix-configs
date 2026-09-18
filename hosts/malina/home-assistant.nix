@@ -20,16 +20,14 @@
     mode = "0400";
   };
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
-
   virtualisation.oci-containers = {
     backend = "podman";
     containers.homeassistant = {
-      image = "ghcr.io/home-assistant/home-assistant:2026.9.0";
+      image = "ghcr.io/home-assistant/home-assistant:stable";
+      labels = {
+        "io.containers.autoupdate" = "registry";
+      };
+
       podman.user = "homeassistant";
 
       extraOptions = [
