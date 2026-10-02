@@ -29,7 +29,7 @@
      vial
      chromium
      neovim
-     smplayer
+    # smplayer
      mpv
      zoom-us
      libreoffice-qt
@@ -65,7 +65,7 @@
      go-hass-agent
      claude-code
      lmstudio
-     rustdesk
+   #  rustdesk
    ];
 #
 #  systemd.user.services.go-hass-agent = {
