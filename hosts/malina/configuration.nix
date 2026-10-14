@@ -12,6 +12,9 @@
     "kernel.sched_autogroup_enabled" = 0;
     "vm.swappiness" = 10;
     "vm.vfs_cache_pressure" = 200;
+    "net.ipv6.conf.eth0.accept_ra" = 2;
+    "net.ipv6.conf.eth0.accept_ra_rt_info_max_plen" = 64;
+    "net.ipv6.conf.eth0.autoconf" = 1;
   };
 
   hardware.enableRedistributableFirmware = true;
@@ -20,6 +23,7 @@
 
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
+  networking.dhcpcd.IPv6rs = false;
 
   nix.settings = {
     download-buffer-size = 524288000; # 500 MiB
