@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs-stable, ... }:
 let
     hardwareModules = inputs.hardware.nixosModules;
     sopsModules = inputs.sops-nix.nixosModules;
@@ -34,7 +34,7 @@ in
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs pkgs-stable; };
         users.radek = {
           imports = [ ./home-manager/home.nix ];
         };
