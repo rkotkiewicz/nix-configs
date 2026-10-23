@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,11 +38,17 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, firefox-addons, plasma-manager, ... }@inputs: {
+  outputs = {self, nixpkgs, home-manager, hardware, sops-nix, deploy-rs, firefox-addons, plasma-manager, nixpkgs-stable, ... }@inputs: {
 
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
 
         system = "x86_64-linux";
 
