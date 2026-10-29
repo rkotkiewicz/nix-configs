@@ -66,6 +66,9 @@
      claude-code
      lmstudio
      rustdesk
+     ddrescue
+     testdisk
+     ntfs3g
    ];
 #
 #  systemd.user.services.go-hass-agent = {
