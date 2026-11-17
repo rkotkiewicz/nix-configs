@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   boot.loader.generic-extlinux-compatible.enable = true;
@@ -16,6 +16,7 @@
     "net.ipv6.conf.eth0.accept_ra_rt_info_max_plen" = 64;
     "net.ipv6.conf.eth0.autoconf" = 1;
   };
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
 
   hardware.enableRedistributableFirmware = true;
 
