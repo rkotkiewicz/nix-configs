@@ -17,6 +17,7 @@ in
     ./sshd.nix
     ./solokey2.nix
 #      ./ups.nix
+    ./direnv.nix
 
     ../../common/locale.nix
     ../../common/sops.nix
