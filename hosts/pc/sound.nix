@@ -29,7 +29,6 @@
         ];
       };
     };
-    jack.enable = true;
   };
 }
 
