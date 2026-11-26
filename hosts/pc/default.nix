@@ -18,6 +18,7 @@ in
     ./solokey2.nix
 #      ./ups.nix
     ./direnv.nix
+    ./ai.nix
 
     ../../common/locale.nix
     ../../common/sops.nix
