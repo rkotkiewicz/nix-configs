@@ -19,6 +19,7 @@ in
 #      ./ups.nix
     ./direnv.nix
     ./ai.nix
+    ./comfyui.nix
 
     ../../common/locale.nix
     ../../common/sops.nix
