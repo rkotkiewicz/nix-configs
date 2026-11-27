@@ -16,7 +16,8 @@
     "net.ipv6.conf.eth0.accept_ra_rt_info_max_plen" = 64;
     "net.ipv6.conf.eth0.autoconf" = 1;
   };
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
+
 
   hardware.enableRedistributableFirmware = true;
 
